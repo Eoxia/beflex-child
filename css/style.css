@@ -8,6 +8,24 @@ License URI: https://spdx.org/licenses/AGPL-3.0-or-later.html
 Version: 3.0.0
 Text Domain: beflex
 */
+/*!
+ * Font Awesome Free 5.8.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+.fa,
+.fas,
+.far,
+.fal,
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
 /*--------------------------------------------------------------
 # Child style
 --------------------------------------------------------------*/
