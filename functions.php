@@ -80,7 +80,7 @@ add_action( 'widgets_init', 'eox_update_widget', 11 );
  * @param  Array $urls_mapping array with fonts urls.
  * @return Array $urls_mapping
  */
-function filter_font_url( $urls_mapping ) {
+function beflex_filter_font_url( $urls_mapping ) {
 	// $urls_mapping['Rozha One'] = 'Rozha+One';
 	return $urls_mapping;
 }
@@ -89,7 +89,7 @@ function filter_font_url( $urls_mapping ) {
  * Action to add new fonts url
  * REQUIRE BEFLEX PRO
  */
-function add_font_url() {
-	add_filter( 'font_url', 'beflex_pro_goolge_font', 10, 1 );
+function beflex_add_font_url() {
+	add_filter( 'beflex_pro_goolge_font', 'beflex_filter_font_url', 10, 1 );
 }
-add_action( 'init', 'add_font_url' );
+add_action( 'init', 'beflex_add_font_url' );
