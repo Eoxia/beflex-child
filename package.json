@@ -13,8 +13,8 @@
   ],
   "license": "GPLv3",
   "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
