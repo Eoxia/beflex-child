@@ -18,6 +18,7 @@
     "gulp-concat": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
+    "sass": "latest",
     "gulp-uglify": "latest",
     "gulp-watch": "latest"
   }
