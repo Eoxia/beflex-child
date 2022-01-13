@@ -9,8 +9,7 @@ var uglify       = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
 
 var paths = {
-	scss: [ 'css/scss/**/*.scss', 'css/' ],
-	js: ['js/beflex/**/*.js', 'js/']
+	scss: [ 'assets/scss/**/*.scss', 'assets/css/' ],
 };
 
 /** SCSS */
@@ -25,16 +24,6 @@ gulp.task( 'build_scss', function() {
 		.pipe( sass({outputStyle: 'compressed'}).on( 'error', sass.logError ) )
 		.pipe( rename( './style.min.css' ) )
 		.pipe( gulp.dest( paths.scss[1] ) );
-});
-
-/** JS */
-gulp.task( 'build_js', function() {
-	return gulp.src( paths.js[0] )
-		.pipe( concat( 'main.js' ) )
-		.pipe( gulp.dest( paths.js[1] ) )
-		.pipe( rename( 'main.min.js' ) )
-		.pipe( uglify() )
-		.pipe( gulp.dest( paths.js[1] ) )
 });
 
 /** Watch */

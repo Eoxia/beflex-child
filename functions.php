@@ -15,7 +15,7 @@
  * @return void
  */
 function theme_enqueue_styles() {
-	wp_enqueue_style( 'beflex-parent-style', get_template_directory_uri() . '/css/style.css' );
+    wp_enqueue_style( 'beflex-parent-style', get_template_directory_uri() . '/assets/css/style.min.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
@@ -27,11 +27,11 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
  */
 function theme_child_enqueue_style() {
 	/** Styles */
-	wp_enqueue_style( 'beflex-child-style', get_stylesheet_directory_uri() . '/css/style.min.css' );
+	wp_enqueue_style( 'beflex-child-style', get_stylesheet_directory_uri() . '/assets/css/style.min.css' );
 	wp_enqueue_style( 'custom-child-style', get_stylesheet_directory_uri() . '/style.css' );
 
 	/** Scripts */
-	wp_enqueue_script( 'beflex-child-js', get_stylesheet_directory_uri() . '/js/main.min.js' );
+	wp_enqueue_script( 'beflex-child-js', get_stylesheet_directory_uri() . 'assets/js/theme.js' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_child_enqueue_style', 11 );
 
@@ -61,35 +61,3 @@ function load_acf_parent( $paths ) {
 	return $paths;
 }
 add_filter( 'acf/settings/load_json', 'load_acf_parent' );
-
-/**
- * Use this function to update widgets of the parent theme
- *
- * @method epx_update_widget
- * @return void
- */
-function eox_update_widget() {
-
-}
-add_action( 'widgets_init', 'eox_update_widget', 11 );
-
-/**
- * Add google fonts to your website
- * REQUIRE BEFLEX PRO
- *
- * @param  Array $urls_mapping array with fonts urls.
- * @return Array $urls_mapping
- */
-function beflex_filter_font_url( $urls_mapping ) {
-	// $urls_mapping['Rozha One'] = 'Rozha+One';
-	return $urls_mapping;
-}
-
-/**
- * Action to add new fonts url
- * REQUIRE BEFLEX PRO
- */
-function beflex_add_font_url() {
-	add_filter( 'beflex_pro_goolge_font', 'beflex_filter_font_url', 10, 1 );
-}
-add_action( 'init', 'beflex_add_font_url' );
