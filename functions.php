@@ -61,3 +61,8 @@ function load_acf_parent( $paths ) {
 	return $paths;
 }
 add_filter( 'acf/settings/load_json', 'load_acf_parent' );
+
+// Blocks
+require_once 'inc/blocks.php';
+// Patterns
+require_once 'inc/block-patterns.php';
