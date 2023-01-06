@@ -17,7 +17,7 @@
  * @param $editor_context
  * @return mixed
  */
-function beflex_create_block_category( $block_categories, $editor_context ) {
+function beflex_child_create_block_category( $block_categories, $editor_context ) {
     if ( ! empty( $editor_context->post ) ) {
         array_unshift(
             $block_categories,
@@ -31,4 +31,4 @@ function beflex_create_block_category( $block_categories, $editor_context ) {
     return $block_categories;
 }
 
-add_filter( 'block_categories_all', 'beflex_create_block_category', 10, 2 );
+add_filter( 'block_categories_all', 'beflex_child_create_block_category', 10, 2 );
